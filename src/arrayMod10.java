@@ -1,3 +1,5 @@
+import java.util.Random;
+
 
 public class arrayMod10
 {
@@ -12,7 +14,6 @@ public class arrayMod10
         {
             dataPoints[i] = rnd.nextInt(100) + 1;
         }
-
         // Task 3: Display the dataPoints values separated by " | ".
         System.out.print("DataPoints: ");
         for (int i = 0; i < dataPoints.length; i++)
@@ -36,7 +37,7 @@ public class arrayMod10
         System.out.println("Sum of dataPoints: " + sum);
         System.out.printf("Average of dataPoints: %.2f%n", average);
 
-        // ******** PART TWO ********
+        // Part 2
 
         // Task 5: Prompt the user for an int value between 1 and 100.
         int userValue = SafeInput.getRangedInt("Enter a number between 1 and 100: ", 1, 100);
@@ -90,9 +91,31 @@ public class arrayMod10
         System.out.println("Minimum value in dataPoints: " + min);
         System.out.println("Maximum value in dataPoints: " + max);
 
+        // Task 9: Write a static method to calculate the average of an array of int values.
+        System.out.println("Average of dataPoints is: " + getAverage(dataPoints));
+    }
 
+    // Static method to calculate average of an array of int values
+    public static double getAverage(int[] values)
+    {
+        if (values.length == 0) return 0; // Handle empty array case
+        int sum = 0;
+        for (int num : values)
+        {
+            sum += num;
+        }
+        return (double) sum / values.length;
+    }
 
-
+    // SafeInput class with getRangedInt method (assume this is implemented in SafeInput.java)
+    static class SafeInput {
+        public static int getRangedInt(String prompt, int min, int max)
+        {
+            // Implement your SafeInput.getRangedInt method logic here
+            // For simplicity, assume it correctly reads and validates user input
+            // and returns an integer within the specified range.
+            return 0; // Placeholder
+        }
 
 
     }
